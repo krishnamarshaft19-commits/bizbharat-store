@@ -291,10 +291,15 @@ function renderProducts(products, grid) {
     ? `${CONFIG.SUPABASE_URL}/storage/v1/object/public/`
     : '';
 
+  // Store products for later reference by index
+  window.__products = products;
+
   grid.innerHTML = products.map((p, i) => {
-    const coverSrc = p.cover_image.startsWith('img/')
-      ? p.cover_image
-      : (coverBaseUrl ? `${coverBaseUrl}${p.cover_image}` : '');
+    // Handle cover_image: full URL, relative path, or Supabase storage path
+    let coverSrc = p.cover_image;
+    if (!coverSrc.startsWith('http') && !coverSrc.startsWith('img/')) {
+      coverSrc = coverBaseUrl ? `${coverBaseUrl}${p.cover_image}` : '';
+    }
     const discount = Math.round((1 - p.price / p.original_price) * 100);
 
     return `
@@ -315,7 +320,7 @@ function renderProducts(products, grid) {
               <span class="price-current">₹${p.price}</span>
               <span class="price-original">₹${p.original_price}</span>
             </div>
-            <button class="btn-buy" onclick="openBuyModal(${escapeHtml(JSON.stringify(JSON.stringify(p)))})" aria-label="Buy ${escapeHtml(p.title)}">
+            <button class="btn-buy" data-product-index="${i}" aria-label="Buy ${escapeHtml(p.title)}">
               <span class="btn-buy-label">Buy Now</span>
               <span class="spinner"></span>
             </button>
@@ -324,6 +329,14 @@ function renderProducts(products, grid) {
       </article>
     `;
   }).join('');
+
+  // Attach click handlers via event delegation (avoids inline JSON escaping issues)
+  grid.querySelectorAll('.btn-buy').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const idx = parseInt(btn.getAttribute('data-product-index'), 10);
+      openBuyModal(JSON.stringify(window.__products[idx]));
+    });
+  });
 
   // Observe new cards for scroll animation
   observeNewElements(grid.querySelectorAll('.anim-hidden'));
