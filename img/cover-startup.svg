@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250">
+  <defs>
+    <linearGradient id="bg-s" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1E293B"/>
+      <stop offset="100%" stop-color="#0F172A"/>
+    </linearGradient>
+    <linearGradient id="accent-s" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F59E0B"/>
+      <stop offset="100%" stop-color="#D97706"/>
+    </linearGradient>
+    <radialGradient id="glow-s" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#F59E0B" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#F59E0B" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="dots-s" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1" fill="#F59E0B" opacity="0.08"/>
+    </pattern>
+  </defs>
+  <rect width="400" height="250" fill="url(#bg-s)"/>
+  <rect width="400" height="250" fill="url(#dots-s)"/>
+  <ellipse cx="200" cy="120" rx="140" ry="100" fill="url(#glow-s)"/>
+  <!-- Decorative shapes -->
+  <circle cx="45" cy="50" r="15" fill="none" stroke="#F59E0B" stroke-width="1.5" opacity="0.15"/>
+  <rect x="340" y="40" width="30" height="30" rx="5" fill="none" stroke="#F59E0B" stroke-width="1" opacity="0.12" transform="rotate(-15 355 55)"/>
+  <circle cx="355" cy="195" r="8" fill="none" stroke="#F59E0B" stroke-width="1" opacity="0.1"/>
+  <!-- Rocket -->
+  <g transform="translate(160, 40)">
+    <!-- Rocket body -->
+    <path d="M40 100 L40 50 Q40 20 55 5 Q70 20 70 50 L70 100 Z" fill="url(#accent-s)" opacity="0.7" stroke="#F59E0B" stroke-width="1.5"/>
+    <!-- Rocket window -->
+    <circle cx="55" cy="45" r="8" fill="#1E293B" stroke="#F59E0B" stroke-width="1.5" opacity="0.8"/>
+    <circle cx="55" cy="45" r="4" fill="#F59E0B" opacity="0.3"/>
+    <!-- Fins -->
+    <path d="M40 80 L25 100 L40 95 Z" fill="#F59E0B" opacity="0.5"/>
+    <path d="M70 80 L85 100 L70 95 Z" fill="#F59E0B" opacity="0.5"/>
+    <!-- Exhaust flames -->
+    <path d="M45 100 L48 120 L55 110 L62 120 L65 100" fill="#F59E0B" opacity="0.4"/>
+    <path d="M48 100 L50 112 L55 105 L60 112 L62 100" fill="#D97706" opacity="0.6"/>
+    <!-- Exhaust particles -->
+    <circle cx="50" cy="125" r="3" fill="#F59E0B" opacity="0.2"/>
+    <circle cx="58" cy="130" r="2" fill="#F59E0B" opacity="0.15"/>
+    <circle cx="54" cy="135" r="2.5" fill="#F59E0B" opacity="0.1"/>
+  </g>
+  <!-- Lightbulb -->
+  <g transform="translate(80, 80)" fill="none" stroke="#F59E0B" stroke-width="1.5" opacity="0.6">
+    <path d="M15 0 Q30 0 30 18 Q30 28 22 32 L22 40 L8 40 L8 32 Q0 28 0 18 Q0 0 15 0Z"/>
+    <line x1="8" y1="44" x2="22" y2="44"/>
+    <line x1="10" y1="48" x2="20" y2="48"/>
+    <!-- Rays -->
+    <line x1="15" y1="-8" x2="15" y2="-14" stroke-width="1.5"/>
+    <line x1="-8" y1="12" x2="-14" y2="10" stroke-width="1.5"/>
+    <line x1="38" y1="12" x2="44" y2="10" stroke-width="1.5"/>
+    <line x1="-5" y1="26" x2="-10" y2="30" stroke-width="1"/>
+    <line x1="35" y1="26" x2="40" y2="30" stroke-width="1"/>
+  </g>
+  <!-- Target/bullseye -->
+  <g transform="translate(300, 80)" opacity="0.5">
+    <circle cx="22" cy="22" r="22" fill="none" stroke="#F59E0B" stroke-width="1.5"/>
+    <circle cx="22" cy="22" r="15" fill="none" stroke="#F59E0B" stroke-width="1.5"/>
+    <circle cx="22" cy="22" r="8" fill="none" stroke="#F59E0B" stroke-width="1.5"/>
+    <circle cx="22" cy="22" r="3" fill="#F59E0B"/>
+    <!-- Arrow hitting target -->
+    <line x1="40" y1="4" x2="24" y2="20" stroke="#F59E0B" stroke-width="2"/>
+    <polygon points="42,2 35,2 42,9" fill="#F59E0B" opacity="0.7"/>
+  </g>
+  <!-- Growth arrow -->
+  <g transform="translate(90, 145)" stroke="#F59E0B" stroke-width="2" fill="none" opacity="0.4">
+    <path d="M0 35 L20 20 L40 28 L60 8" stroke-linecap="round" stroke-linejoin="round"/>
+    <polygon points="60,8 52,8 58,16" fill="#F59E0B"/>
+  </g>
+  <!-- Sparkle stars -->
+  <text x="140" y="50" fill="#F59E0B" font-size="10" opacity="0.3">✦</text>
+  <text x="280" y="60" fill="#F59E0B" font-size="8" opacity="0.2">✦</text>
+  <text x="320" y="170" fill="#F59E0B" font-size="12" opacity="0.25">✦</text>
+  <!-- Title -->
+  <text x="200" y="210" text-anchor="middle" fill="#FFFFFF" font-family="Inter, system-ui, sans-serif" font-size="16" font-weight="700" letter-spacing="0.5">Startup Playbook</text>
+  <text x="200" y="232" text-anchor="middle" fill="#F59E0B" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="600" letter-spacing="0.5">India</text>
+  <!-- Corner accents -->
+  <path d="M0 0 L30 0 L30 4 L4 4 L4 30 L0 30 Z" fill="#F59E0B" opacity="0.3"/>
+  <path d="M400 250 L370 250 L370 246 L396 246 L396 220 L400 220 Z" fill="#F59E0B" opacity="0.3"/>
+</svg>

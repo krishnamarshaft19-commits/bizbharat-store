@@ -1,0 +1,68 @@
+[
+  {
+    "id": "biz-001",
+    "title": "The Complete Business Blueprint",
+    "description": "A comprehensive guide covering business strategy, operations, marketing, and financial planning for Indian entrepreneurs.",
+    "price": 299,
+    "original_price": 599,
+    "category": "Business",
+    "cover_image": "img/cover-business.svg",
+    "pdf_file": "business-blueprint.pdf",
+    "featured": true
+  },
+  {
+    "id": "mkt-001",
+    "title": "Digital Marketing Mastery",
+    "description": "Master SEO, social media marketing, content strategy, and paid advertising to grow your business online.",
+    "price": 199,
+    "original_price": 499,
+    "category": "Marketing",
+    "cover_image": "img/cover-marketing.svg",
+    "pdf_file": "digital-marketing.pdf",
+    "featured": false
+  },
+  {
+    "id": "fin-001",
+    "title": "Personal Finance & Investment Guide",
+    "description": "Learn smart money management, stock market investing, mutual funds, and tax-saving strategies for Indians.",
+    "price": 249,
+    "original_price": 449,
+    "category": "Finance",
+    "cover_image": "img/cover-finance.svg",
+    "pdf_file": "personal-finance.pdf",
+    "featured": true
+  },
+  {
+    "id": "startup-001",
+    "title": "Startup Playbook India",
+    "description": "From ideation to funding - everything you need to launch and scale a successful startup in India.",
+    "price": 349,
+    "original_price": 699,
+    "category": "Startup",
+    "cover_image": "img/cover-startup.svg",
+    "pdf_file": "startup-playbook.pdf",
+    "featured": true
+  },
+  {
+    "id": "lead-001",
+    "title": "Leadership & Management Excellence",
+    "description": "Develop essential leadership skills, team management techniques, and organizational strategies.",
+    "price": 199,
+    "original_price": 399,
+    "category": "Leadership",
+    "cover_image": "img/cover-leadership.svg",
+    "pdf_file": "leadership.pdf",
+    "featured": false
+  },
+  {
+    "id": "tax-001",
+    "title": "GST & Taxation Simplified",
+    "description": "Demystify GST, income tax, TDS, and business taxation with practical examples and filing guides.",
+    "price": 179,
+    "original_price": 349,
+    "category": "Finance",
+    "cover_image": "img/cover-taxation.svg",
+    "pdf_file": "gst-taxation.pdf",
+    "featured": false
+  }
+]

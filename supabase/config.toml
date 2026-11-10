@@ -1,0 +1,19 @@
+[project]
+id = "your-project-ref"
+
+[api]
+enabled = true
+port = 54321
+schemas = ["public"]
+
+[functions.create-order]
+verify_jwt = false
+
+[functions.payment-callback]
+verify_jwt = false
+
+[functions.download-pdf]
+verify_jwt = false
+
+[functions.verify-order]
+verify_jwt = false

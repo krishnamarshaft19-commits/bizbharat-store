@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250">
+  <defs>
+    <linearGradient id="bg-t" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1E293B"/>
+      <stop offset="100%" stop-color="#0F172A"/>
+    </linearGradient>
+    <linearGradient id="accent-t" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#14B8A6"/>
+      <stop offset="100%" stop-color="#0D9488"/>
+    </linearGradient>
+    <radialGradient id="glow-t" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#14B8A6" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#14B8A6" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="dots-t" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1" fill="#14B8A6" opacity="0.08"/>
+    </pattern>
+  </defs>
+  <rect width="400" height="250" fill="url(#bg-t)"/>
+  <rect width="400" height="250" fill="url(#dots-t)"/>
+  <ellipse cx="200" cy="120" rx="140" ry="95" fill="url(#glow-t)"/>
+  <!-- Decorative shapes -->
+  <rect x="35" y="30" width="28" height="28" rx="5" fill="none" stroke="#14B8A6" stroke-width="1.5" opacity="0.15" transform="rotate(15 49 44)"/>
+  <circle cx="360" cy="50" r="14" fill="none" stroke="#14B8A6" stroke-width="1" opacity="0.12"/>
+  <circle cx="50" cy="195" r="9" fill="none" stroke="#14B8A6" stroke-width="1" opacity="0.1"/>
+  <!-- Calculator -->
+  <g transform="translate(100, 55)">
+    <rect x="0" y="0" width="70" height="95" rx="8" fill="#14B8A6" opacity="0.1" stroke="#14B8A6" stroke-width="1.5" opacity="0.6"/>
+    <!-- Screen -->
+    <rect x="8" y="8" width="54" height="22" rx="4" fill="#14B8A6" opacity="0.15"/>
+    <text x="52" y="24" text-anchor="end" fill="#14B8A6" font-family="Inter, monospace" font-size="12" font-weight="600" opacity="0.7">18%</text>
+    <!-- Buttons grid -->
+    <rect x="8" y="38" width="14" height="11" rx="2" fill="#14B8A6" opacity="0.2"/>
+    <rect x="28" y="38" width="14" height="11" rx="2" fill="#14B8A6" opacity="0.2"/>
+    <rect x="48" y="38" width="14" height="11" rx="2" fill="#14B8A6" opacity="0.2"/>
+    <rect x="8" y="54" width="14" height="11" rx="2" fill="#14B8A6" opacity="0.15"/>
+    <rect x="28" y="54" width="14" height="11" rx="2" fill="#14B8A6" opacity="0.15"/>
+    <rect x="48" y="54" width="14" height="11" rx="2" fill="#14B8A6" opacity="0.15"/>
+    <rect x="8" y="70" width="14" height="11" rx="2" fill="#14B8A6" opacity="0.12"/>
+    <rect x="28" y="70" width="14" height="11" rx="2" fill="#14B8A6" opacity="0.12"/>
+    <rect x="48" y="70" width="14" height="11" rx="2" fill="url(#accent-t)" opacity="0.5"/>
+  </g>
+  <!-- Document -->
+  <g transform="translate(210, 55)" fill="none" stroke="#14B8A6" stroke-width="1.5" opacity="0.6">
+    <path d="M0 8 Q0 0 8 0 L45 0 L60 15 L60 92 Q60 100 52 100 L8 100 Q0 100 0 92 Z"/>
+    <path d="M45 0 L45 15 L60 15"/>
+    <!-- Text lines -->
+    <line x1="10" y1="30" x2="50" y2="30" stroke-width="1" opacity="0.5"/>
+    <line x1="10" y1="40" x2="45" y2="40" stroke-width="1" opacity="0.4"/>
+    <line x1="10" y1="50" x2="48" y2="50" stroke-width="1" opacity="0.4"/>
+    <line x1="10" y1="60" x2="35" y2="60" stroke-width="1" opacity="0.3"/>
+    <!-- Checkmark -->
+    <path d="M12 75 L20 83 L35 68" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.7"/>
+    <!-- Stamp circle -->
+    <circle cx="45" cy="78" r="10" stroke-dasharray="3 2" opacity="0.4"/>
+  </g>
+  <!-- Rupee symbol large -->
+  <g transform="translate(300, 80)" opacity="0.5">
+    <circle cx="22" cy="22" r="22" fill="#14B8A6" opacity="0.1" stroke="#14B8A6" stroke-width="1.5"/>
+    <text x="22" y="30" text-anchor="middle" fill="#14B8A6" font-family="Inter, system-ui, sans-serif" font-size="22" font-weight="700" opacity="0.8">₹</text>
+  </g>
+  <!-- Percentage symbol -->
+  <g transform="translate(310, 140)" opacity="0.4">
+    <circle cx="8" cy="8" r="6" fill="none" stroke="#14B8A6" stroke-width="1.5"/>
+    <circle cx="30" cy="30" r="6" fill="none" stroke="#14B8A6" stroke-width="1.5"/>
+    <line x1="32" y1="4" x2="6" y2="34" stroke="#14B8A6" stroke-width="1.5"/>
+  </g>
+  <!-- Floating rupee -->
+  <text x="88" y="170" fill="#14B8A6" font-family="Inter, system-ui, sans-serif" font-size="16" font-weight="700" opacity="0.15">₹</text>
+  <!-- Sparkles -->
+  <text x="185" y="50" fill="#14B8A6" font-size="10" opacity="0.3">✦</text>
+  <text x="350" y="175" fill="#14B8A6" font-size="8" opacity="0.2">✦</text>
+  <!-- Title -->
+  <text x="200" y="210" text-anchor="middle" fill="#FFFFFF" font-family="Inter, system-ui, sans-serif" font-size="16" font-weight="700" letter-spacing="0.5">GST &amp; Taxation</text>
+  <text x="200" y="232" text-anchor="middle" fill="#14B8A6" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="600" letter-spacing="0.5">Simplified</text>
+  <!-- Corner accents -->
+  <path d="M0 0 L30 0 L30 4 L4 4 L4 30 L0 30 Z" fill="#14B8A6" opacity="0.3"/>
+  <path d="M400 250 L370 250 L370 246 L396 246 L396 220 L400 220 Z" fill="#14B8A6" opacity="0.3"/>
+</svg>

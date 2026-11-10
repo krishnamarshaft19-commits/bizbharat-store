@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250">
+  <defs>
+    <linearGradient id="bg-l" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1E293B"/>
+      <stop offset="100%" stop-color="#0F172A"/>
+    </linearGradient>
+    <linearGradient id="accent-l" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#EC4899"/>
+      <stop offset="100%" stop-color="#DB2777"/>
+    </linearGradient>
+    <radialGradient id="glow-l" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#EC4899" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#EC4899" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="dots-l" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1" fill="#EC4899" opacity="0.08"/>
+    </pattern>
+  </defs>
+  <rect width="400" height="250" fill="url(#bg-l)"/>
+  <rect width="400" height="250" fill="url(#dots-l)"/>
+  <ellipse cx="200" cy="120" rx="140" ry="95" fill="url(#glow-l)"/>
+  <!-- Decorative shapes -->
+  <circle cx="55" cy="45" r="14" fill="none" stroke="#EC4899" stroke-width="1.5" opacity="0.15"/>
+  <rect x="335" y="35" width="28" height="28" rx="5" fill="none" stroke="#EC4899" stroke-width="1" opacity="0.12" transform="rotate(20 349 49)"/>
+  <circle cx="45" cy="195" r="8" fill="none" stroke="#EC4899" stroke-width="1" opacity="0.1"/>
+  <!-- Crown -->
+  <g transform="translate(155, 40)">
+    <path d="M0 55 L10 20 L25 40 L45 5 L65 40 L80 20 L90 55 Z" fill="url(#accent-l)" opacity="0.6" stroke="#EC4899" stroke-width="1.5"/>
+    <rect x="0" y="55" width="90" height="12" rx="3" fill="#EC4899" opacity="0.5" stroke="#EC4899" stroke-width="1"/>
+    <!-- Crown jewels -->
+    <circle cx="45" cy="12" r="4" fill="#EC4899" opacity="0.8"/>
+    <circle cx="25" cy="25" r="3" fill="#EC4899" opacity="0.5"/>
+    <circle cx="65" cy="25" r="3" fill="#EC4899" opacity="0.5"/>
+    <circle cx="10" cy="35" r="2.5" fill="#EC4899" opacity="0.4"/>
+    <circle cx="80" cy="35" r="2.5" fill="#EC4899" opacity="0.4"/>
+  </g>
+  <!-- People icons -->
+  <g transform="translate(80, 110)" opacity="0.5">
+    <!-- Person 1 -->
+    <circle cx="15" cy="8" r="7" fill="none" stroke="#EC4899" stroke-width="1.5"/>
+    <path d="M0 30 Q0 18 15 18 Q30 18 30 30" fill="none" stroke="#EC4899" stroke-width="1.5"/>
+  </g>
+  <g transform="translate(120, 105)" opacity="0.6">
+    <!-- Person 2 (leader - slightly larger) -->
+    <circle cx="17" cy="8" r="8" fill="none" stroke="#EC4899" stroke-width="2"/>
+    <path d="M0 32 Q0 18 17 18 Q34 18 34 32" fill="none" stroke="#EC4899" stroke-width="2"/>
+  </g>
+  <g transform="translate(165, 110)" opacity="0.5">
+    <!-- Person 3 -->
+    <circle cx="15" cy="8" r="7" fill="none" stroke="#EC4899" stroke-width="1.5"/>
+    <path d="M0 30 Q0 18 15 18 Q30 18 30 30" fill="none" stroke="#EC4899" stroke-width="1.5"/>
+  </g>
+  <!-- Star -->
+  <g transform="translate(290, 70)" opacity="0.6">
+    <polygon points="25,0 31,18 50,18 35,29 40,47 25,36 10,47 15,29 0,18 19,18" fill="#EC4899" opacity="0.2" stroke="#EC4899" stroke-width="1.5"/>
+  </g>
+  <!-- Path/Road -->
+  <g transform="translate(260, 120)" opacity="0.4">
+    <path d="M0 50 Q20 40 25 25 Q30 10 50 5 Q70 0 80 -5" fill="none" stroke="#EC4899" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="6 4"/>
+    <polygon points="80,-5 72,-2 77,-11" fill="#EC4899" opacity="0.6"/>
+    <!-- Milestone dots -->
+    <circle cx="0" cy="50" r="3" fill="#EC4899" opacity="0.5"/>
+    <circle cx="25" cy="25" r="3" fill="#EC4899" opacity="0.6"/>
+    <circle cx="50" cy="5" r="3" fill="#EC4899" opacity="0.7"/>
+  </g>
+  <!-- Sparkles -->
+  <text x="250" y="55" fill="#EC4899" font-size="10" opacity="0.3">✦</text>
+  <text x="75" cy="85" fill="#EC4899" font-size="8" opacity="0.2">✦</text>
+  <!-- Title -->
+  <text x="200" y="210" text-anchor="middle" fill="#FFFFFF" font-family="Inter, system-ui, sans-serif" font-size="16" font-weight="700" letter-spacing="0.5">Leadership &amp; Management</text>
+  <text x="200" y="232" text-anchor="middle" fill="#EC4899" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="600" letter-spacing="0.5">Excellence</text>
+  <!-- Corner accents -->
+  <path d="M0 0 L30 0 L30 4 L4 4 L4 30 L0 30 Z" fill="#EC4899" opacity="0.3"/>
+  <path d="M400 250 L370 250 L370 246 L396 246 L396 220 L400 220 Z" fill="#EC4899" opacity="0.3"/>
+</svg>

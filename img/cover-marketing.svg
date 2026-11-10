@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250">
+  <defs>
+    <linearGradient id="bg-m" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1E293B"/>
+      <stop offset="100%" stop-color="#0F172A"/>
+    </linearGradient>
+    <linearGradient id="accent-m" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6366F1"/>
+      <stop offset="100%" stop-color="#4F46E5"/>
+    </linearGradient>
+    <radialGradient id="glow-m" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#6366F1" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#6366F1" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="dots-m" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1" fill="#6366F1" opacity="0.08"/>
+    </pattern>
+  </defs>
+  <rect width="400" height="250" fill="url(#bg-m)"/>
+  <rect width="400" height="250" fill="url(#dots-m)"/>
+  <ellipse cx="200" cy="120" rx="150" ry="100" fill="url(#glow-m)"/>
+  <!-- Decorative shapes -->
+  <circle cx="50" cy="45" r="18" fill="none" stroke="#6366F1" stroke-width="1.5" opacity="0.15"/>
+  <rect x="330" y="30" width="35" height="35" rx="6" fill="none" stroke="#6366F1" stroke-width="1" opacity="0.12" transform="rotate(20 347 47)"/>
+  <circle cx="340" cy="200" r="10" fill="none" stroke="#6366F1" stroke-width="1" opacity="0.1"/>
+  <!-- Megaphone -->
+  <g transform="translate(80, 65)" fill="none" stroke="#6366F1" stroke-width="2" opacity="0.8">
+    <path d="M0 30 L8 25 L8 35 Z" fill="#6366F1" opacity="0.3"/>
+    <path d="M8 22 L45 5 L45 55 L8 38 Z"/>
+    <rect x="0" y="24" width="8" height="14" rx="2"/>
+    <path d="M45 20 Q60 30 45 40" stroke-dasharray="3 2"/>
+    <path d="M48 12 Q68 30 48 48" stroke-dasharray="3 2" opacity="0.5"/>
+    <!-- Sound waves -->
+    <circle cx="55" cy="30" r="4" fill="#6366F1" opacity="0.2"/>
+    <circle cx="62" cy="24" r="3" fill="#6366F1" opacity="0.15"/>
+    <circle cx="65" cy="36" r="2.5" fill="#6366F1" opacity="0.12"/>
+  </g>
+  <!-- Analytics graph -->
+  <g transform="translate(200, 70)">
+    <rect x="0" y="0" width="110" height="75" rx="8" fill="#6366F1" opacity="0.08" stroke="#6366F1" stroke-width="1" opacity="0.2"/>
+    <polyline points="15,55 35,40 55,48 75,25 95,15" fill="none" stroke="#6366F1" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.8"/>
+    <circle cx="95" cy="15" r="4" fill="#6366F1" opacity="0.9"/>
+    <!-- Grid lines -->
+    <line x1="15" y1="20" x2="95" y2="20" stroke="#6366F1" stroke-width="0.5" opacity="0.15"/>
+    <line x1="15" y1="35" x2="95" y2="35" stroke="#6366F1" stroke-width="0.5" opacity="0.15"/>
+    <line x1="15" y1="50" x2="95" y2="50" stroke="#6366F1" stroke-width="0.5" opacity="0.15"/>
+  </g>
+  <!-- Social media icons - simplified -->
+  <g transform="translate(160, 150)" opacity="0.5">
+    <!-- Like/heart -->
+    <circle cx="0" cy="0" r="16" fill="#6366F1" opacity="0.15" stroke="#6366F1" stroke-width="1"/>
+    <path d="M-6 -2 Q-6 -7 -1 -7 Q2 -7 4 -4 Q6 -7 9 -7 Q14 -7 14 -2 Q14 4 4 9 Q-6 4 -6 -2Z" fill="#6366F1" opacity="0.6" transform="translate(-4, 0) scale(0.7)"/>
+  </g>
+  <g transform="translate(210, 155)" opacity="0.4">
+    <!-- Share -->
+    <circle cx="0" cy="0" r="14" fill="#6366F1" opacity="0.12" stroke="#6366F1" stroke-width="1"/>
+    <circle cx="-4" cy="0" r="2.5" fill="#6366F1"/>
+    <circle cx="5" cy="-5" r="2.5" fill="#6366F1"/>
+    <circle cx="5" cy="5" r="2.5" fill="#6366F1"/>
+    <line x1="-2" y1="-1" x2="3" y2="-4" stroke="#6366F1" stroke-width="1"/>
+    <line x1="-2" y1="1" x2="3" y2="4" stroke="#6366F1" stroke-width="1"/>
+  </g>
+  <!-- Cursor icon -->
+  <g transform="translate(320, 100)" opacity="0.5">
+    <path d="M0 0 L0 24 L7 18 L13 28 L17 26 L11 16 L20 16 Z" fill="#6366F1" opacity="0.4" stroke="#6366F1" stroke-width="1.5"/>
+  </g>
+  <!-- Title -->
+  <text x="200" y="210" text-anchor="middle" fill="#FFFFFF" font-family="Inter, system-ui, sans-serif" font-size="16" font-weight="700" letter-spacing="0.5">Digital Marketing</text>
+  <text x="200" y="232" text-anchor="middle" fill="#6366F1" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="600" letter-spacing="0.5">Mastery</text>
+  <!-- Corner accents -->
+  <path d="M0 0 L30 0 L30 4 L4 4 L4 30 L0 30 Z" fill="#6366F1" opacity="0.3"/>
+  <path d="M400 250 L370 250 L370 246 L396 246 L396 220 L400 220 Z" fill="#6366F1" opacity="0.3"/>
+</svg>

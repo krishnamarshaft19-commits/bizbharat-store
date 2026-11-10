@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Payment Failed — BizBharat</title>
+  <meta name="robots" content="noindex, nofollow">
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📚</text></svg>" type="image/svg+xml">
+
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <div class="result-page">
+    <div class="result-card">
+      <!-- Animated X -->
+      <div class="result-icon result-icon--failure">
+        <svg viewBox="0 0 88 88" xmlns="http://www.w3.org/2000/svg">
+          <circle class="circle" cx="44" cy="44" r="40"/>
+          <line class="x-line" x1="32" y1="32" x2="56" y2="56"/>
+          <line class="x-line" x1="56" y1="32" x2="32" y2="56" style="animation-delay: 0.65s;"/>
+        </svg>
+      </div>
+
+      <h1 class="result-title" style="color: var(--error);">Payment Failed</h1>
+      <p class="result-desc" id="failure-desc">
+        Something went wrong with your payment. Don't worry — no amount has been deducted from your account.
+      </p>
+
+      <!-- Error Details -->
+      <div class="result-details" id="error-details" style="display:none;">
+        <div class="result-detail-row">
+          <span class="result-detail-label">Error</span>
+          <span class="result-detail-value" id="detail-error">—</span>
+        </div>
+        <div class="result-detail-row">
+          <span class="result-detail-label">Transaction ID</span>
+          <span class="result-detail-value" id="detail-txn-id">—</span>
+        </div>
+      </div>
+
+      <!-- Actions -->
+      <div class="result-actions">
+        <a href="/#products" class="btn-primary" style="justify-content:center; animation:none;">
+          ← Try Again
+        </a>
+        <a href="mailto:support@bizbharat.com" class="btn-outline" style="justify-content:center;">
+          Contact Support
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const params = new URLSearchParams(window.location.search);
+      const error = params.get('error') || params.get('error_Message') || '';
+      const txnId = params.get('transaction_id') || params.get('txnid') || '';
+
+      if (error || txnId) {
+        document.getElementById('error-details').style.display = 'block';
+        if (error) document.getElementById('detail-error').textContent = error;
+        if (txnId) document.getElementById('detail-txn-id').textContent = txnId;
+      }
+
+      // If there's a custom message
+      const msg = params.get('message');
+      if (msg) {
+        document.getElementById('failure-desc').textContent = msg;
+      }
+    });
+  </script>
+</body>
+</html>

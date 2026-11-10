@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Payment Successful — BizBharat</title>
+  <meta name="robots" content="noindex, nofollow">
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📚</text></svg>" type="image/svg+xml">
+
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <div class="result-page">
+    <div class="result-card">
+      <!-- Animated Checkmark -->
+      <div class="result-icon result-icon--success">
+        <svg viewBox="0 0 88 88" xmlns="http://www.w3.org/2000/svg">
+          <circle class="circle" cx="44" cy="44" r="40"/>
+          <polyline class="check" points="28 46 40 58 62 34"/>
+        </svg>
+      </div>
+
+      <h1 class="result-title" style="color: var(--success);">Payment Successful!</h1>
+      <p class="result-desc">
+        Your payment has been processed successfully. You can now download your PDF below.
+      </p>
+
+      <!-- Order Details -->
+      <div class="result-details" id="order-details">
+        <div class="result-detail-row">
+          <span class="result-detail-label">Order ID</span>
+          <span class="result-detail-value" id="detail-order-id">—</span>
+        </div>
+        <div class="result-detail-row">
+          <span class="result-detail-label">Transaction ID</span>
+          <span class="result-detail-value" id="detail-txn-id">—</span>
+        </div>
+        <div class="result-detail-row">
+          <span class="result-detail-label">Status</span>
+          <span class="result-detail-value" style="color: var(--success);">Completed</span>
+        </div>
+      </div>
+
+      <!-- Actions -->
+      <div class="result-actions">
+        <button class="btn-primary" id="btn-download" disabled>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          <span id="download-label">Download PDF</span>
+          <span class="spinner" id="download-spinner" style="display:none;"></span>
+        </button>
+        <a href="/" class="btn-outline" style="justify-content:center;">
+          ← Back to Home
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Container -->
+  <div class="toast-container" id="toast-container" aria-live="polite"></div>
+
+  <script>
+    // ─── Configuration ───────────────────────────────────────
+    const CONFIG = {
+      SUPABASE_URL: 'https://dxitvxmwnnoxrlbacnjv.supabase.co',
+      SUPABASE_ANON_KEY: 'sb_publishable__i3p5TOkoeE7y5Zg-BzCNw_6jOHryYs',
+    };
+
+    // ─── Helpers ─────────────────────────────────────────────
+    function escapeHtml(str) {
+      const div = document.createElement('div');
+      div.textContent = str;
+      return div.innerHTML;
+    }
+
+    const Toast = (() => {
+      let container = document.getElementById('toast-container');
+      function getContainer() {
+        if (!container) {
+          container = document.createElement('div');
+          container.id = 'toast-container';
+          container.className = 'toast-container';
+          document.body.appendChild(container);
+        }
+        return container;
+      }
+      function show(type, title, message, duration = 5000) {
+        const c = getContainer();
+        const toast = document.createElement('div');
+        toast.className = `toast toast--${type}`;
+        const icon = type === 'success' ? '✅' : '❌';
+        toast.innerHTML = `
+          <span class="toast-icon">${icon}</span>
+          <div class="toast-body">
+            <div class="toast-title">${escapeHtml(title)}</div>
+            <div class="toast-message">${escapeHtml(message)}</div>
+          </div>
+          <button class="toast-close" aria-label="Close">&times;</button>
+        `;
+        toast.querySelector('.toast-close').addEventListener('click', () => dismiss(toast));
+        c.appendChild(toast);
+        if (duration > 0) setTimeout(() => dismiss(toast), duration);
+        return toast;
+      }
+      function dismiss(toast) {
+        if (!toast || toast.classList.contains('removing')) return;
+        toast.classList.add('removing');
+        toast.addEventListener('animationend', () => toast.remove());
+      }
+      return {
+        success: (t, m, d) => show('success', t, m, d),
+        error: (t, m, d) => show('error', t, m, d),
+      };
+    })();
+
+    // ─── Page Logic ──────────────────────────────────────────
+    document.addEventListener('DOMContentLoaded', () => {
+      const params = new URLSearchParams(window.location.search);
+      const orderId = params.get('order_id') || '';
+      const txnId = params.get('transaction_id') || params.get('txnid') || '';
+
+      // Populate details
+      document.getElementById('detail-order-id').textContent = orderId || '—';
+      document.getElementById('detail-txn-id').textContent = txnId || '—';
+
+      const btnDownload = document.getElementById('btn-download');
+      const downloadLabel = document.getElementById('download-label');
+      const downloadSpinner = document.getElementById('download-spinner');
+
+      if (orderId) {
+        btnDownload.disabled = false;
+
+        btnDownload.addEventListener('click', async () => {
+          if (btnDownload.disabled) return;
+
+          if (!CONFIG.SUPABASE_URL || CONFIG.SUPABASE_URL === 'YOUR_SUPABASE_URL') {
+            Toast.error('Configuration Error', 'Supabase URL is not configured.');
+            return;
+          }
+
+          btnDownload.disabled = true;
+          downloadLabel.style.display = 'none';
+          downloadSpinner.style.display = 'inline-block';
+
+          try {
+            const response = await fetch(`${CONFIG.SUPABASE_URL}/functions/v1/download-pdf`, {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${CONFIG.SUPABASE_ANON_KEY}`,
+              },
+              body: JSON.stringify({ order_id: orderId }),
+            });
+
+            if (!response.ok) {
+              const errData = await response.json().catch(() => ({}));
+              throw new Error(errData.error || `Server error (${response.status})`);
+            }
+
+            const data = await response.json();
+
+            if (data.download_url) {
+              Toast.success('Success', 'Your download will start shortly.');
+              window.location.href = data.download_url;
+            } else {
+              throw new Error('No download URL received.');
+            }
+          } catch (err) {
+            console.error('Download error:', err);
+            Toast.error('Download Failed', err.message || 'Please try again or contact support.');
+          } finally {
+            btnDownload.disabled = false;
+            downloadLabel.style.display = '';
+            downloadSpinner.style.display = 'none';
+          }
+        });
+
+        // Auto-fetch download link on load
+        btnDownload.click();
+      }
+    });
+  </script>
+</body>
+</html>

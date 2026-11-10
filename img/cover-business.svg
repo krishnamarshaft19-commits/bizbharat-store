@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250">
+  <defs>
+    <linearGradient id="bg-b" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1E293B"/>
+      <stop offset="100%" stop-color="#0F172A"/>
+    </linearGradient>
+    <linearGradient id="accent-b" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF6B35"/>
+      <stop offset="100%" stop-color="#FF3D00"/>
+    </linearGradient>
+    <radialGradient id="glow-b" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FF6B35" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#FF6B35" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="dots-b" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1" fill="#FF6B35" opacity="0.08"/>
+    </pattern>
+  </defs>
+  <!-- Background -->
+  <rect width="400" height="250" fill="url(#bg-b)"/>
+  <rect width="400" height="250" fill="url(#dots-b)"/>
+  <!-- Glow -->
+  <ellipse cx="200" cy="130" rx="140" ry="100" fill="url(#glow-b)"/>
+  <!-- Decorative geometric shapes -->
+  <rect x="30" y="30" width="40" height="40" rx="6" fill="none" stroke="#FF6B35" stroke-width="1.5" opacity="0.15" transform="rotate(15 50 50)"/>
+  <circle cx="350" cy="50" r="20" fill="none" stroke="#FF6B35" stroke-width="1" opacity="0.12"/>
+  <circle cx="60" cy="200" r="12" fill="none" stroke="#FF6B35" stroke-width="1" opacity="0.1"/>
+  <rect x="320" y="180" width="50" height="50" rx="8" fill="none" stroke="#FF6B35" stroke-width="1" opacity="0.1" transform="rotate(-10 345 205)"/>
+  <!-- Chart bars -->
+  <g transform="translate(120, 80)">
+    <rect x="0" y="60" width="22" height="50" rx="4" fill="#FF6B35" opacity="0.3"/>
+    <rect x="30" y="40" width="22" height="70" rx="4" fill="#FF6B35" opacity="0.5"/>
+    <rect x="60" y="20" width="22" height="90" rx="4" fill="#FF6B35" opacity="0.7"/>
+    <rect x="90" y="0" width="22" height="110" rx="4" fill="url(#accent-b)" opacity="0.9"/>
+    <!-- Upward arrow -->
+    <path d="M5 55 L100 -5" stroke="#FF6B35" stroke-width="2" fill="none" stroke-dasharray="4 3" opacity="0.5"/>
+    <polygon points="100,-5 88,-2 95,-12" fill="#FF6B35" opacity="0.6"/>
+  </g>
+  <!-- Briefcase icon -->
+  <g transform="translate(260, 90)" fill="none" stroke="#FF6B35" stroke-width="2" opacity="0.7">
+    <rect x="0" y="10" width="44" height="34" rx="5"/>
+    <path d="M14 10V6a4 4 0 014-4h8a4 4 0 014 4v4"/>
+    <line x1="0" y1="24" x2="44" y2="24" stroke-dasharray="3 2"/>
+  </g>
+  <!-- Growth arrows -->
+  <g transform="translate(280, 150)" stroke="#FF6B35" stroke-width="1.5" fill="none" opacity="0.4">
+    <path d="M0 30 L15 15 L30 22 L45 5"/>
+    <polygon points="45,5 38,6 43,13" fill="#FF6B35"/>
+  </g>
+  <!-- Decorative lines -->
+  <line x1="40" y1="120" x2="90" y2="120" stroke="#FF6B35" stroke-width="1" opacity="0.15"/>
+  <line x1="40" y1="126" x2="75" y2="126" stroke="#FF6B35" stroke-width="1" opacity="0.1"/>
+  <!-- Title text -->
+  <text x="200" y="210" text-anchor="middle" fill="#FFFFFF" font-family="Inter, system-ui, sans-serif" font-size="16" font-weight="700" letter-spacing="0.5">The Complete Business</text>
+  <text x="200" y="232" text-anchor="middle" fill="#FF6B35" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="600" letter-spacing="0.5">Blueprint</text>
+  <!-- Corner accents -->
+  <path d="M0 0 L30 0 L30 4 L4 4 L4 30 L0 30 Z" fill="#FF6B35" opacity="0.3"/>
+  <path d="M400 250 L370 250 L370 246 L396 246 L396 220 L400 220 Z" fill="#FF6B35" opacity="0.3"/>
+</svg>
