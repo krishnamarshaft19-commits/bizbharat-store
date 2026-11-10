@@ -19,3 +19,6 @@ node_modules/
 
 # Supabase temp/cache
 supabase/.temp/
+
+# Local Netlify folder
+.netlify
