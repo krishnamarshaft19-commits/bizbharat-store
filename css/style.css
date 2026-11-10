@@ -788,7 +788,8 @@ html {
 .product-cover {
   position: relative;
   width: 100%;
-  aspect-ratio: 16 / 10;
+  aspect-ratio: 1 / 1;
+  background: var(--surface-alt, #0d1320);
   overflow: hidden;
   background: linear-gradient(135deg, #1a2436, #243247);
 }
@@ -796,7 +797,8 @@ html {
 .product-cover img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
+  padding: 12px;
   transition: transform var(--transition-base);
 }
 

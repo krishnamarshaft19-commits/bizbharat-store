@@ -9,5 +9,16 @@
     "cover_image": "https://dxitvxmwnnoxrlbacnjv.supabase.co/storage/v1/object/public/covers/Entrepreneur_.jpg",
     "pdf_file": "50_Real_Franchise.pdf",
     "featured": true
+  },
+  {
+    "id": "petrol-001",
+    "title": "Shell Petrol Pump Retailership Guide",
+    "description": "Complete step-by-step guide to getting a Shell petrol pump dealership in India. Covers investment, application process, ROI, and all requirements.",
+    "price": 99,
+    "original_price": 499,
+    "category": "Business",
+    "cover_image": "https://dxitvxmwnnoxrlbacnjv.supabase.co/storage/v1/object/public/covers/Petrol_pump.jpg",
+    "pdf_file": "BizBharat_Shell_Petrol_Pump_Retailership_Guide.pdf",
+    "featured": true
   }
 ]

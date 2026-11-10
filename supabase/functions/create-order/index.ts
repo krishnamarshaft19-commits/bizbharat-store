@@ -91,7 +91,7 @@ serve(async (req) => {
     const failureUrl = `${SITE_URL}/failure.html`;
 
     // PayU form parameters
-    const payuParams = {
+    const payuParams: Record<string, string> = {
       key: PAYU_MERCHANT_KEY,
       txnid: txnId,
       amount: amountStr,
@@ -102,8 +102,14 @@ serve(async (req) => {
       surl: `${SUPABASE_URL}/functions/v1/payment-callback`,
       furl: `${SUPABASE_URL}/functions/v1/payment-callback`,
       hash: hash,
-      service_provider: "payu_paisa",
     };
+
+    // Add UDF fields explicitly (PayU requires them even if empty)
+    payuParams.udf1 = "";
+    payuParams.udf2 = "";
+    payuParams.udf3 = "";
+    payuParams.udf4 = "";
+    payuParams.udf5 = "";
 
     return new Response(
       JSON.stringify({
